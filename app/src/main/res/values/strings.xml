@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="button">进入西瓜视频</string>
+    <string name="login_title">登录西瓜视频</string>
+    <string name="phone_placeholder">输入手机号</string>
+    <string name="verification_placeholder">请输入验证码</string>
+    <string name="send_verify">发送验证码</string>
+    <string name="password_title_below">密码登录</string>
 </resources>

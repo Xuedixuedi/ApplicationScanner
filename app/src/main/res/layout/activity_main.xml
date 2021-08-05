@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:fontFamily="sans-serif-medium"
-            android:text="登陆西瓜视频"
+            android:text="@string/login_title"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -43,7 +43,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
                 android:ems="10"
-                android:hint="输入手机号"
+                android:hint="@string/phone_placeholder"
+                android:maxLength="11"
                 android:inputType="phone"
                 android:textSize="12sp" />
 
@@ -62,7 +63,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:ems="10"
-                    android:hint="请输入验证码"
+                    android:hint="@string/verification_placeholder"
+                    android:maxLength="6"
                     android:inputType="numberSigned"
                     android:textSize="12sp" />
 
@@ -73,10 +75,11 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:gravity="center"
-                    android:text="发送验证码"
+                    android:text="@string/send_verify"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#000000"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:focusable="true" />
             </LinearLayout>
 
         </LinearLayout>
@@ -86,7 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="进入西瓜视频"
+            android:text="@string/button"
+            android:background="@drawable/btn_selector"
             android:textColor="#80FFFFFF"
             android:textSize="20sp"
             app:backgroundTint="@android:color/darker_gray" />
@@ -105,44 +109,90 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:gravity="center"
-            android:text="密码登录"
+            android:text="@string/password_title_below"
             android:textColor="#000000"
             android:textSize="20sp" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="2">
+
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
-
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
+                android:id="@+id/imageButton5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/transparent"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/tik_tok" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/imageButton6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tik_tok"
+                tools:ignore="VectorDrawableCompat" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
-        </LinearLayout>
+                android:id="@+id/imageButton6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/imageButton7"
+                app:layout_constraintStart_toEndOf="@id/imageButton5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/qq"
+                android:scaleType="fitCenter"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/imageButton8"
+                app:layout_constraintStart_toEndOf="@id/imageButton6"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/wechat"
+                android:scaleType="fitCenter"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageButton7"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/sina_weibo"
+                android:scaleType="fitCenter"
+                tools:ignore="VectorDrawableCompat" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
