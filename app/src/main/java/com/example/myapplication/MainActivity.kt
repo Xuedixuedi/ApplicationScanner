@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         val editPhoneText = findViewById<EditText>(R.id.editTextPhone)
         val editVerifiedCodeText = findViewById<EditText>(R.id.editTextNumberSigned)
 
+        button.isEnabled = false
+
         editPhoneText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
