@@ -25,7 +25,6 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setupFragment() {
-
         val fragment  = RecyclerListFragment.newInstance()
         val fragmentManager: FragmentManager = supportFragmentManager
         val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()

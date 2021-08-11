@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val editPhoneText = findViewById<EditText>(R.id.editTextPhone)
         val editVerifiedCodeText = findViewById<EditText>(R.id.editTextNumberSigned)
 
-        button.isEnabled = true
+        button.isEnabled = false
 
         loadData()
 
@@ -94,13 +94,13 @@ class MainActivity : AppCompatActivity() {
             putString("STRING_KEY", phoneText)
         }.apply()
 
-        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Data Saved", Toast.LENGTH_SHORT).show()
     }
 
     @SuppressLint("SetTextI18n")
     private fun loadData() {
         val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-        val sevedString = sharedPreferences.getString("STRING_KEY",null)
+        val sevedString = sharedPreferences.getString("STRING_KEY", null)
 
         val textView = findViewById<TextView>(R.id.textView6)
         textView.setText("Your Phone Number:$sevedString")

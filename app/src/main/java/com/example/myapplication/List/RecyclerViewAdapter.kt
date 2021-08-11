@@ -11,21 +11,29 @@ import com.example.myapplication.R
 import com.example.myapplication.model.RecyclerData
 import com.squareup.picasso.Picasso
 
-
+/**
+ * 将数据与每一个item绑定
+ *
+ * 负责recycler view与数据直接交互的部分
+ */
 class RecyclerViewAdapter() :
     RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
-    var items = ArrayList<RecyclerData>()
+    //数据源
+    private var items = ArrayList<RecyclerData>()
 
     fun setUpdatedData(items: ArrayList<RecyclerData>) {
         this.items = items
         notifyDataSetChanged()
     }
 
+    /**
+     * View Holder
+     */
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageThumb = view.findViewById<ImageView>(R.id.imageThumb)
-        val tvTitle = view.findViewById<TextView>(R.id.tvTitle)
-        val tvDesc = view.findViewById<TextView>(R.id.tvDesc)
+        private val imageThumb = view.findViewById<ImageView>(R.id.imageThumb)
+        private val tvTitle = view.findViewById<TextView>(R.id.tvTitle)
+        private val tvDesc = view.findViewById<TextView>(R.id.tvDesc)
 
         fun bind(data: RecyclerData) {
             tvTitle.text = data.name
@@ -46,12 +54,15 @@ class RecyclerViewAdapter() :
         return MyViewHolder(view)
     }
 
+    /**
+     * 返回item个数
+     */
     override fun getItemCount(): Int {
         return items.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(items.get(position))
+        holder.bind(items[position])
     }
 
 }
