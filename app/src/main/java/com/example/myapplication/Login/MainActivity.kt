@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val editPhoneText = findViewById<EditText>(R.id.editTextPhone)
         val editVerifiedCodeText = findViewById<EditText>(R.id.editTextNumberSigned)
 
-        button.isEnabled = false
+        button.isEnabled = true
 
         loadData()
 
