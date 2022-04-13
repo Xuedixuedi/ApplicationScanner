@@ -22,6 +22,7 @@ plugins {
 sonarqube {
     properties {
         property "sonar.projectKey", "test"
+        property "sonar.qualitygate.wait", true
     }
 }
 
